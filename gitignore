@@ -1,0 +1,13 @@
+# ===== Backend (Spring Boot) =====
+backend/target/
+backend/.idea/
+backend/*.iml
+
+# ===== Frontend (React + Vite) =====
+ekasutram-frontend/node_modules/
+ekasutram-frontend/dist/
+ekasutram-frontend/.vite/
+
+# ===== Common =====
+.env
+.DS_Store
