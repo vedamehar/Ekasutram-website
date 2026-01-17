@@ -1,5 +1,27 @@
+import { useEffect, useState } from "react";
+import { getResources } from "../services/api";
+
 const Resources = () => {
-  return <h1>Resources Page</h1>;
+  const [resources, setResources] = useState<any[]>([]);
+
+  useEffect(() => {
+    getResources().then((res) => setResources(res.data));
+  }, []);
+
+  return (
+    <div>
+      <h2>Resources</h2>
+      <ul>
+        {resources.map((r) => (
+          <li key={r.id}>
+            <a href={`http://localhost:8080${r.pdfUrl}`} target="_blank">
+              {r.subject} — {r.chapterName}
+            </a>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
 };
 
 export default Resources;

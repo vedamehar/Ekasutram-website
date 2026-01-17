@@ -42,4 +42,9 @@ public class ResourceController {
         return resourceService.saveResource(subject, chapterName, file);
     }
 
+    @DeleteMapping("/{id}")
+    public void deleteResource(@PathVariable Long id) throws IOException {
+        resourceService.deleteResource(id);
+    }
+
 }

@@ -51,4 +51,22 @@ public class ResourceService {
 
         return resourceRepository.save(resource);
     }
+
+    public void deleteResource(Long id) throws IOException {
+
+        Resource resource = resourceRepository.findById(id)
+                .orElseThrow(() -> new RuntimeException("Resource not found"));
+
+        // Absolute file path
+        String filePath = uploadRoot + resource.getPdfUrl().replace("/uploads", "");
+        File file = new File(filePath);
+
+        // Delete file if exists
+        if (file.exists()) {
+            file.delete();
+        }
+
+        // Delete DB record
+        resourceRepository.deleteById(id);
+    }
 }

@@ -4,10 +4,19 @@ backend/.idea/
 backend/*.iml
 
 # ===== Frontend (React + Vite) =====
-ekasutram-frontend/node_modules/
-ekasutram-frontend/dist/
-ekasutram-frontend/.vite/
+frontend/node_modules/
+frontend/dist/
+frontend/.vite/
 
-# ===== Common =====
-.env
+# ===== Uploaded Files =====
+uploads/
+
+# ===== IDE / OS =====
+.idea/
+*.iml
 .DS_Store
+
+# ===== Env / Logs =====
+.env
+*.log
+
