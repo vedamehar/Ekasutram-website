@@ -29,5 +29,20 @@ build/
 !**/src/main/**/build/
 !**/src/test/**/build/
 
+# IntelliJ IDEA
+.idea/
+*.iml
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Node
+node_modules/
+
+# Build outputs
+/backend/target/
+/frontend/dist/
+
 ### VS Code ###
 .vscode/
