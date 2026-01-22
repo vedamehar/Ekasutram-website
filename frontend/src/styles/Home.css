@@ -9,11 +9,7 @@
 .home-container {
   width: 100%;
   overflow-x: hidden;
-<<<<<<< HEAD
   background: transparent;
-=======
-  background: #0a0a0a;
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
   color: white;
 }
 
@@ -23,58 +19,16 @@
   padding: 0 20px;
 }
 
-/* Mathematical Background Pattern */
-.math-background {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: 0;
-  overflow: hidden;
-}
-
-.math-symbol {
-  position: absolute;
-  font-size: 4rem;
-  opacity: 0.08;
-  font-weight: bold;
-  color: #888888;
-  left: var(--x);
-  top: var(--y);
-  transition: transform 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
-  will-change: transform;
-}
-
-.math-symbol:nth-child(2) {
-  animation-delay: 2s;
-}
-
-.math-symbol:nth-child(3) {
-  animation-delay: 4s;
-}
-
-.math-symbol:nth-child(4) {
-  animation-delay: 6s;
-}
-
-.math-symbol:nth-child(5) {
-  animation-delay: 8s;
-}
-
 /* Spotlight Card Effect */
 .spotlight-card {
   position: relative;
-<<<<<<< HEAD
-  background: rgba(55, 55, 55, 0.6);
-=======
-  background: rgba(26, 26, 26, 0.6);
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
+  background: rgba(45, 45, 45, 0.6);
+  /* Gray transparency */
   border-radius: 12px;
   overflow: hidden;
   transition: transform 0.3s ease;
   backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .spotlight-card::before {
@@ -131,67 +85,22 @@
   height: 100%;
 }
 
-/* =============================================
-   HERO SECTION
-   ============================================= */
-
-/* =============================================
-   HERO SECTION
-   ============================================= */
-
+/* HERO SECTION */
 .hero-section {
   position: relative;
   z-index: 1;
-<<<<<<< HEAD
-  min-height: 70vh;
-  /* Reduced from 100vh */
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 100px 20px 40px;
-  /* Adjusted top padding */
-  background: transparent;
-=======
   min-height: 100vh;
   display: flex;
   align-items: center;
   justify-content: center;
   padding: 60px 20px;
   background: transparent;
-  /* Changed from opaque gradient */
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
   overflow: hidden;
 }
 
-/* ... existing hero animations ... */
-
+/* REMOVED HERO GLOW PER REQUEST */
 .hero-glow {
-  position: absolute;
-  width: 600px;
-  height: 600px;
-<<<<<<< HEAD
   display: none;
-=======
-  background: radial-gradient(circle, rgba(120, 120, 120, 0.15) 0%, transparent 70%);
-  border-radius: 50%;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  filter: blur(40px);
-  animation: pulse 4s ease-in-out infinite;
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
-}
-
-@keyframes pulse {
-
-  0%,
-  100% {
-    transform: translate(-50%, -50%) scale(1);
-  }
-
-  50% {
-    transform: translate(-50%, -50%) scale(1.1);
-  }
 }
 
 .hero-content {
@@ -206,7 +115,7 @@
   display: inline-block;
   width: 120px;
   height: 120px;
-  background: linear-gradient(135deg, rgba(150, 150, 150, 0.15) 0%, rgba(100, 100, 100, 0.1) 100%);
+  background: rgba(80, 80, 80, 0.2);
   border: 2px solid #888888;
   border-radius: 12px;
   display: flex;
@@ -221,7 +130,6 @@
   font-size: 5rem;
   color: #cccccc;
   font-weight: 800;
-  text-shadow: 0 0 20px rgba(150, 150, 150, 0.3);
 }
 
 @keyframes logoFloat {
@@ -241,26 +149,22 @@
   font-weight: 900;
   margin: 20px 0 10px 0;
   letter-spacing: 4px;
-<<<<<<< HEAD
-  /* text-shadow: removed */
-  /* animation: titleGlow removed */
-=======
-  text-shadow: 0 0 30px rgba(150, 150, 150, 0.3), 0 0 60px rgba(100, 100, 100, 0.2);
-  animation: titleGlow 2s ease-in-out infinite;
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
+  /* Glow/Shadow Removed */
+  text-shadow: none;
   font-family: 'Georgia', serif;
   color: #f0f0f0;
+  animation: slideIn 0.8s ease-out 0.1s both;
 }
 
-@keyframes titleGlow {
-
-  0%,
-  100% {
-    text-shadow: 0 0 30px rgba(150, 150, 150, 0.3), 0 0 60px rgba(100, 100, 100, 0.2);
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
   }
 
-  50% {
-    text-shadow: 0 0 40px rgba(150, 150, 150, 0.5), 0 0 80px rgba(100, 100, 100, 0.3);
+  to {
+    opacity: 1;
+    transform: translateY(0);
   }
 }
 
@@ -280,18 +184,6 @@
   animation: slideIn 0.8s ease-out 0.5s both;
 }
 
-@keyframes slideIn {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
 .button-group {
   display: flex;
   gap: 20px;
@@ -309,48 +201,27 @@
   font-weight: 600;
   transition: all 0.4s ease;
   letter-spacing: 1px;
-  position: relative;
-  overflow: hidden;
 }
 
 .cta-button.primary {
-  background: linear-gradient(135deg, #6a6a6a 0%, #4a4a4a 100%);
+  background: #555;
+  /* Solid gray */
   color: white;
-  box-shadow: 0 5px 20px rgba(100, 100, 100, 0.3);
-}
-
-.cta-button.primary::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgba(255, 255, 255, 0.2);
-  transition: left 0.4s ease;
-}
-
-.cta-button.primary:hover::before {
-  left: 100%;
 }
 
 .cta-button.primary:hover {
+  background: #666;
   transform: translateY(-3px);
-  box-shadow: 0 10px 30px rgba(100, 100, 100, 0.5);
-  background: linear-gradient(135deg, #7a7a7a 0%, #5a5a5a 100%);
 }
 
 .cta-button.secondary {
   background: transparent;
   color: #b0b0b0;
   border: 2px solid #707070;
-  box-shadow: 0 0 10px rgba(100, 100, 100, 0.2);
 }
 
 .cta-button.secondary:hover {
   background: rgba(100, 100, 100, 0.2);
-  box-shadow: 0 0 20px rgba(100, 100, 100, 0.4);
-  transform: translateY(-3px);
   border-color: #909090;
 }
 
@@ -368,8 +239,8 @@
   position: absolute;
   width: 120px;
   height: 120px;
-  background: rgba(100, 100, 100, 0.15);
-  border: 2px solid rgba(120, 120, 120, 0.3);
+  background: rgba(60, 60, 60, 0.15);
+  border: 2px solid rgba(100, 100, 100, 0.3);
   border-radius: 10px;
   display: flex;
   align-items: center;
@@ -377,7 +248,7 @@
   font-size: 1.5rem;
   color: #b0b0b0;
   font-weight: bold;
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(5px);
 }
 
 .card-1 {
@@ -410,120 +281,17 @@
   }
 }
 
-@media (max-width: 768px) {
-  .floating-card {
-    width: 90px;
-    height: 90px;
-    font-size: 1.2rem;
-  }
-
-  .card-1,
-  .card-2,
-  .card-3 {
-    display: none;
-  }
-}
-
-/* =============================================
-   ABOUT SECTION
-   ============================================= */
-
+/* SECTIONS */
+.mission-section,
 .about-section {
   position: relative;
   z-index: 1;
-<<<<<<< HEAD
-  padding: 60px 20px;
-  background: rgba(45, 45, 45, 0.7);
-  backdrop-filter: blur(5px);
-}
-
-=======
   padding: 100px 20px;
-  background: rgba(15, 15, 15, 0.7);
-  /* Semi-transparent */
-  backdrop-filter: blur(5px);
+  background: transparent;
+  /* Changed to transparent so math background shows */
 }
 
-/* ... existing about styles ... */
-
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
-/* =============================================
-   MISSION SECTION
-   ============================================= */
-
-.mission-section {
-  position: relative;
-  z-index: 1;
-<<<<<<< HEAD
-  padding: 40px 20px;
-  /* Reduced from 100px */
-  background: rgba(40, 40, 40, 0.6);
-=======
-  padding: 100px 20px;
-  background: rgba(10, 10, 10, 0.6);
-  /* Semi-transparent */
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
-}
-
-/* ... existing mission styles ... */
-
-/* =============================================
-   EVENTS SECTION
-   ============================================= */
-
-.events-section {
-  position: relative;
-  z-index: 1;
-<<<<<<< HEAD
-  padding: 60px 20px;
-  background: rgba(45, 45, 45, 0.7);
-=======
-  padding: 100px 20px;
-  background: rgba(15, 15, 15, 0.7);
-  /* Semi-transparent */
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
-}
-
-/* ... existing event styles ... */
-
-/* =============================================
-   WHY JOIN SECTION
-   ============================================= */
-
-.why-join-section {
-  position: relative;
-  z-index: 1;
-<<<<<<< HEAD
-  padding: 60px 20px;
-  background: rgba(40, 40, 40, 0.6);
-=======
-  padding: 100px 20px;
-  background: rgba(10, 10, 10, 0.6);
-  /* Semi-transparent */
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
-}
-
-.why-join-section h2 {
-  text-align: center;
-  font-size: 2.8rem;
-  margin-bottom: 60px;
-  color: #d0d0d0;
-  letter-spacing: 2px;
-  font-family: 'Georgia', serif;
-}
-
-.why-join-section h2::after {
-  content: '';
-  display: block;
-  width: 80px;
-  height: 3px;
-  background: linear-gradient(90deg, transparent, #888888, transparent);
-  margin: 20px auto 0;
-}
-
-/* Unify Grid Layouts */
-.mission-grid,
-.benefits-grid {
+.mission-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 40px;
@@ -531,317 +299,32 @@
   margin: 0 auto;
 }
 
-/* Unified Card Style for Mission, Vision & Benefits */
-.mission-card,
-.benefit {
-<<<<<<< HEAD
-  background: rgba(50, 50, 50, 0.6);
+.mission-card {
   padding: 40px;
+  background: rgba(40, 40, 40, 0.5);
+  /* Semi-transparent gray */
   border-radius: 12px;
   border: 1px solid rgba(255, 255, 255, 0.08);
-=======
-  background: rgba(20, 20, 20, 0.6);
-  padding: 40px;
-  border-radius: 12px;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  /* Subtle border */
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
-  transition: all 0.3s ease;
   backdrop-filter: blur(10px);
-  position: relative;
-  overflow: hidden;
-  text-align: left;
-<<<<<<< HEAD
-=======
-  /* Reset to legible alignment */
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
-  height: 100%;
 }
 
-.mission-card::before,
-.benefit::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 4px;
-<<<<<<< HEAD
-=======
-  /* Accent line on left */
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
-  height: 100%;
-  background: linear-gradient(180deg, #888888, transparent);
-  opacity: 0.7;
-  transition: width 0.3s ease;
-}
-
-.mission-card:hover,
-.benefit:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 15px 40px rgba(0, 0, 0, 0.4);
-<<<<<<< HEAD
-  background: rgba(60, 60, 60, 0.7);
-=======
-  background: rgba(30, 30, 30, 0.7);
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
-  border-color: rgba(255, 255, 255, 0.2);
-}
-
-.mission-card h3,
-.benefit h4 {
+.mission-card h3 {
   font-size: 1.8rem;
-  color: #e0e0e0;
-  margin-bottom: 20px;
-  margin-top: 10px;
-  font-family: 'Georgia', serif;
-  letter-spacing: 0.5px;
-}
-
-.mission-card p,
-.benefit p {
-  font-size: 1.05rem;
-  line-height: 1.7;
-  color: #b0b0b0;
-}
-
-.benefit p {
-  font-size: 0.95rem;
-  line-height: 1.7;
-  color: #a0a0a0;
-  margin: 0;
-}
-
-/* =============================================
-   CTA SECTION
-   ============================================= */
-
-.cta-section {
-  position: relative;
-  z-index: 1;
-  background: linear-gradient(135deg, #1a1a1a 0%, #151515 50%, #0f0f0f 100%);
-  color: white;
-<<<<<<< HEAD
-  padding: 80px 20px;
-=======
-  padding: 120px 20px;
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
-  text-align: center;
-  overflow: hidden;
-}
-
-.cta-section::before {
-  content: '';
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: radial-gradient(circle at 50% 50%, rgba(120, 120, 120, 0.1) 0%, transparent 70%);
-  pointer-events: none;
-}
-
-.cta-section h2 {
-  font-size: 2.5rem;
-  margin-bottom: 20px;
-  position: relative;
-  z-index: 1;
-  font-family: 'Georgia', serif;
-  letter-spacing: 2px;
-  color: #e0e0e0;
-}
-
-.cta-section p {
-  font-size: 1.2rem;
-  margin-bottom: 40px;
-  color: #a0a0a0;
-  position: relative;
-  z-index: 1;
-}
-
-/* =============================================
-<<<<<<< HEAD
-   FOOTER STYLES (Added for compatibility)
-   ============================================= */
-.about-footer {
-  background: #111;
-  padding: 4rem 2rem 2rem;
-  border-top: 1px solid #333;
-  width: 100%;
-  position: relative;
-  z-index: 10;
-}
-
-.footer-content {
-  max-width: 1200px;
-  margin: 0 auto;
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 3rem;
-  margin-bottom: 3rem;
-}
-
-.footer-section h3 {
-  font-size: 1.5rem;
-  margin-bottom: 1rem;
   color: #fff;
+  margin-bottom: 20px;
 }
 
-.footer-section h4 {
-  color: #888;
-  margin-bottom: 1.5rem;
-  text-transform: uppercase;
-  font-size: 0.9rem;
-  letter-spacing: 1px;
+.mission-card p {
+  color: #ccc;
+  line-height: 1.6;
 }
-
-.footer-section a {
-  display: block;
-  color: #b0b0b0;
-  text-decoration: none;
-  margin-bottom: 0.8rem;
-  transition: color 0.3s ease;
-}
-
-.footer-section a:hover {
-  color: #fff;
-}
-
-.footer-bottom {
-  text-align: center;
-  padding-top: 2rem;
-  border-top: 1px solid #222;
-  color: #666;
-}
-
-/* =============================================
-=======
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
-   RESPONSIVE DESIGN
-   ============================================= */
 
 @media (max-width: 768px) {
   .hero-title {
     font-size: 3rem;
   }
 
-  .hero-subtitle {
-    font-size: 1.2rem;
+  .floating-card {
+    display: none;
   }
-<<<<<<< HEAD
-=======
-
-  .hero-college {
-    font-size: 1rem;
-  }
-
-  .button-group {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .cta-button {
-    width: 100%;
-    max-width: 300px;
-  }
-
-  .about-section h2,
-  .events-section h2,
-  .why-join-section h2,
-  .cta-section h2,
-  .mission-section h2 {
-    font-size: 2rem;
-  }
-
-  .mission-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .about-text {
-    padding: 20px;
-    font-size: 1rem;
-  }
-
-  .logo-accent {
-    width: 100px;
-    height: 100px;
-  }
-
-  .epsilon-symbol {
-    font-size: 4rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero-section {
-    min-height: 80vh;
-    padding: 40px 15px;
-  }
-
-  .hero-title {
-    font-size: 2rem;
-    letter-spacing: 2px;
-  }
-
-  .hero-subtitle {
-    font-size: 1rem;
-  }
-
-  .hero-college {
-    font-size: 0.9rem;
-  }
-
-  .logo-accent {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 20px;
-  }
-
-  .epsilon-symbol {
-    font-size: 3rem;
-  }
-
-  .about-section,
-  .mission-section,
-  .events-section,
-  .why-join-section,
-  .cta-section {
-    padding: 60px 15px;
-  }
-
-  .about-section h2,
-  .mission-section h2,
-  .events-section h2,
-  .why-join-section h2,
-  .cta-section h2 {
-    font-size: 1.5rem;
-  }
-
-  .mission-card,
-  .event-card,
-  .benefit {
-    padding: 25px;
-  }
-
-  .event-icon {
-    font-size: 2.5rem;
-  }
-
-  .benefit-number {
-    font-size: 2rem;
-  }
-
-  .about-text {
-    padding: 15px;
-    font-size: 0.95rem;
-  }
-
-  .cta-section {
-    padding: 80px 15px;
-  }
-
-  .button-group {
-    gap: 10px;
-  }
->>>>>>> 8161dfded62f2d5a9e42c0ffe58280b1239252b5
 }
